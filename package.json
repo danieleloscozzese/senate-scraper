@@ -1,0 +1,32 @@
+{
+  "name": "@danarthurgallagher/senate-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A CLI tool to scrape the email addresses from the Italian Senate's website.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanArthurGallagher/senate-scraper.git"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "Daniel Arthur Gallagher <me@danielarthurgallagher.dev>",
+  "license": "EUPL-1.2",
+  "bugs": {
+    "url": "https://github.com/DanArthurGallagher/senate-scraper/issues"
+  },
+  "homepage": "https://github.com/DanArthurGallagher/senate-scraper#readme",
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-google": "^0.14.0",
+    "jest": "^26.6.3",
+    "prettier": "2.2.1"
+  },
+  "dependencies": {
+    "commander": "^7.2.0"
+  }
+}
