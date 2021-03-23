@@ -1,3 +1,22 @@
 {
-  "lombardia": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/03.html"
+  "piemonte": "http://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/01.html",
+  "valle d'aosta": "http://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/02.html",
+  "lombardia": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/03.html",
+  "trentino-alto adige": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/04.html",
+  "veneto": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/05.html",
+  "friuli-venezia giulia": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/06.html",
+  "liguria": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/07.html",
+  "emilia romagna": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/08.html",
+  "toscana": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/09.html",
+  "umbria": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/10.html",
+  "marche": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/11.html",
+  "lazio": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/12.html",
+  "abruzzo": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/13.html",
+  "molise": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/14.html",
+  "campania": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/15.html",
+  "puglia": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/16.html",
+  "basilicata": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/17.html",
+  "calabria": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/18.html",
+  "sicilia": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/19.html",
+  "sardegna": "https://www.senato.it/leg/18/BGT/Schede/Attsen/Regioni/20.html"
 }
