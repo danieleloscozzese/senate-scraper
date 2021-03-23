@@ -1,7 +1,6 @@
 {
   "name": "@danarthurgallagher/senate-scraper",
   "version": "1.0.0",
-  "type": "module",
   "description": "A CLI tool to scrape the email addresses from the Italian Senate's website.",
   "main": "src/index.js",
   "scripts": {
@@ -21,12 +20,15 @@
   },
   "homepage": "https://github.com/DanArthurGallagher/senate-scraper#readme",
   "devDependencies": {
+    "@types/commander": "^2.12.2",
     "eslint": "^7.22.0",
     "eslint-config-google": "^0.14.0",
     "jest": "^26.6.3",
     "prettier": "2.2.1"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
     "commander": "^7.2.0"
   }
 }
