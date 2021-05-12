@@ -1,10 +1,13 @@
-const { Command } = require("commander");
-const axios = require("axios").default;
-const jsdom = require("jsdom");
-const config = require("../regions.json");
-const { writeFile } = require("fs/promises");
+import axios from "axios";
+import { Command } from "commander";
+import jsdom from "jsdom";
+import { readFile, writeFile } from "node:fs/promises";
 
 const { JSDOM } = jsdom;
+
+const config = JSON.parse(
+  await readFile(new URL("../regions.json", import.meta.url))
+);
 
 const program = new Command();
 
@@ -88,7 +91,7 @@ axios
         return mails.filter(Boolean).join("\n");
       })
       .then((list) =>
-        writeFile(`${__dirname}/../list.txt`, list, "utf8")
+        writeFile(new URL("../list.txt", import.meta.url), list, "utf8")
           .then(() => {
             console.log("All written");
           })
