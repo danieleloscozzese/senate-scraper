@@ -6,7 +6,7 @@ import config from "../regions.json" assert { type: "json" };
 
 const program = new Command("Senate Scraper");
 
-program.version("1.0.0");
+program.version("19.0.0");
 
 program.parse(process.argv);
 
