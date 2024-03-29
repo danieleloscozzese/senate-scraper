@@ -4,6 +4,7 @@
   "description": "A CLI tool to scrape the email addresses from the Italian Senate's website.",
   "main": "src/index.mjs",
   "scripts": {
+    "test": "prettier --check src/ regions.json",
     "format": "prettier --write ."
   },
   "repository": {
