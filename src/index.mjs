@@ -1,40 +1,42 @@
-import axios from "axios";
 import { Command } from "commander";
-import jsdom from "jsdom";
-import { readFile, writeFile } from "node:fs/promises";
+import { JSDOM } from "jsdom";
+import { writeFile } from "node:fs/promises";
+/** @type {Record<string, string>} */
+import config from "../regions.json" assert { type: "json" };
 
-const { JSDOM } = jsdom;
-
-const config = JSON.parse(
-	await readFile(new URL("../regions.json", import.meta.url)),
-);
-
-const program = new Command();
+const program = new Command("Senate Scraper");
 
 program.version("1.0.0");
 
 program.parse(process.argv);
 
-axios
-	.get(config.lombardia)
-	.then((response) => {
-		const dom = new JSDOM(response.data);
+fetch(config.lombardia)
+	.then((res) => {
+		if (res.ok) {
+			return res.text();
+		} else {
+			throw new Error(res.statusText);
+		}
+	})
+	.then((data) => {
+		const dom = new JSDOM(data);
 
+		/** @type NodeListOf<HTMLAnchorElement> */
 		const links = dom.window.document.querySelectorAll(
-			".linkSenatore a[href*=sattsen]",
+			'.linkSenatore a[href*="senatori"]',
 		);
 
-		/** @type {String[]} */
+		/** @type {URL[]} */
 		const senatorPages = [];
 
 		for (let linkIndex = 0; linkIndex < links.length; linkIndex++) {
 			/** @type {string} */
 			const ref = links[linkIndex].href;
 
-			if (ref.startsWith("http")) {
-				senatorPages.push(ref);
+			if (!ref.startsWith("/")) {
+				console.warn("Unexpected URL, not relative:", ref);
 			} else {
-				senatorPages.push(`http://www.senato.it${ref}`);
+				senatorPages.push(new URL(ref, "https://www.senato.it/"));
 			}
 		}
 
@@ -44,29 +46,33 @@ axios
 	})
 	.then((senatorPages) => {
 		const mailRequests = senatorPages.map((url) => {
-			return axios
-				.get(url, {
-					maxRedirects: 0,
-				})
-				.catch((result) => {
-					/** @type {string} */
-					const rawLocation = result.response.headers["location"];
-
-					if (result.response.status === 307 && rawLocation) {
-						let loc = rawLocation;
-						if (rawLocation.startsWith("http:")) {
-							loc = rawLocation.replace("http", "https");
+			return fetch(url)
+				.then((result) => {
+					if (result.ok && result.status === 200) {
+						return result.text();
+					} else if (result.status === 307) {
+						let loc = result.headers.get("Location");
+						if (loc === null) {
+							throw new RangeError("Unexpected result, cannot follow:", result);
+						} else if (loc.startsWith("http:")) {
+							loc = loc.replace("http", "https");
 						}
 
-						return axios.get(loc);
+						return fetch(loc).then((res) => {
+							if (res.ok) {
+								return res.text();
+							} else {
+								throw new Error(res.statusText);
+							}
+						});
 					} else {
 						throw new Error(
 							`Expected a redirect but the status was ${result.status} and the headers are ${result.headers}`,
 						);
 					}
 				})
-				.then((response) => {
-					const mailLine = response.data
+				.then((page) => {
+					const mailLine = page
 						.split("\n")
 						.filter((s) => s.includes("cnt_email"));
 
@@ -74,7 +80,7 @@ axios
 						throw new RangeError("There are too many matching lines, or 0.");
 					}
 
-					const address = /\s'(.*@.*)'\s/.exec(mailLine)[1];
+					const address = /mailto:(.*@senato.it)"/.exec(mailLine)[1];
 
 					return address;
 				})
