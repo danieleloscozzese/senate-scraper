@@ -1,0 +1,71 @@
+{
+	"region": {
+		"piemonte": {
+			"it": "Piemonte"
+		},
+		"valle d'aosta": {
+			"it": "Valle d'Aosta",
+            "fr": "Vallée d'Aoste"
+		},
+		"lombardia": {
+			"it": "Lombardia",
+            "de": "Lombardei",
+            "fr": "Lombardie"
+		},
+		"trentino-alto adige": {
+			"it": "Trentino-Alto Adige",
+            "de": "Trentino-Südtirol"
+		},
+		"veneto": {
+			"it": "Veneto"
+		},
+		"friuli-venezia giulia": {
+			"it": "Friuli-Venezia Giulia",
+            "de": "Friaul-Julisch Venetien",
+            "fr": "Frioul-Vénétie Julienne",
+            "sl":"Furlanija-Julijska krajina"
+		},
+		"liguria": {
+			"it": "Liguria"
+		},
+		"emilia romagna": {
+			"it": "Emilia Romagna"
+		},
+		"toscana": {
+			"it": "Toscana"
+		},
+		"umbria": {
+			"it": "Umbria"
+		},
+		"marche": {
+			"it": "Marche"
+		},
+		"lazio": {
+			"it": "Lazio"
+		},
+		"abruzzo": {
+			"it": "Abruzzo"
+		},
+		"molise": {
+			"it": "Molise"
+		},
+		"campania": {
+			"it": "Campania"
+		},
+		"puglia": {
+			"it": "Puglia"
+		},
+		"basilicata": {
+			"it": "Basilicata"
+		},
+		"calabria": {
+			"it": "Calabria"
+		},
+		"sicilia": {
+			"it": "Sicilia"
+		},
+		"sardegna": {
+			"it": "Sardegna"
+		}
+	}
+}
