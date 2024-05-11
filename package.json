@@ -5,7 +5,7 @@
   "main": "src/index.mjs",
   "scripts": {
 		"start": "node ./src/index.mjs",
-    "test": "prettier --check src/ regions.json",
+    "test": "prettier --check src/",
     "format": "prettier --write ."
   },
   "repository": {
