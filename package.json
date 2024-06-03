@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/danieleloscozzese/senate-scraper#readme",
   "devDependencies": {
-    "@types/jsdom": "^21.1.0",
+    "@types/jsdom": "^21.1.7",
     "prettier": "3.2.5"
   },
   "dependencies": {
