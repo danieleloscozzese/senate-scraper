@@ -1,37 +1,37 @@
 {
-  "name": "@danielarthurgallagher/senate-scraper",
-  "version": "19.0.0",
-  "description": "A CLI tool to scrape the email addresses from the Italian Senate's website.",
-  "main": "src/index.mjs",
-  "scripts": {
+	"name": "@danielarthurgallagher/senate-scraper",
+	"version": "19.0.0",
+	"description": "A CLI tool to scrape the email addresses from the Italian Senate's website.",
+	"main": "src/index.mjs",
+	"scripts": {
 		"start": "node ./src/index.mjs",
-    "test": "prettier --check src/",
-    "format": "prettier --write ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/danieleloscozzese/senate-scraper.git"
-  },
-  "keywords": [
-    "cli"
-  ],
-  "author": "Daniel Arthur Gallagher <me@danielarthurgallagher.dev>",
-  "type": "module",
-  "exports": "./src/index.js",
-  "engines": {
-    "node": ">=18"
-  },
-  "license": "EUPL-1.2",
-  "bugs": {
-    "url": "https://github.com/danieleloscozzese/senate-scraper/issues"
-  },
-  "homepage": "https://github.com/danieleloscozzese/senate-scraper#readme",
-  "devDependencies": {
-    "@types/jsdom": "^21.1.0",
-    "prettier": "3.2.5"
-  },
-  "dependencies": {
-    "commander": "^12.1.0",
-    "jsdom": "^24"
-  }
+		"test": "prettier --check src/",
+		"format": "prettier --write ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/danieleloscozzese/senate-scraper.git"
+	},
+	"keywords": [
+		"cli"
+	],
+	"author": "Daniel Arthur Gallagher <me@danielarthurgallagher.dev>",
+	"type": "module",
+	"exports": "./src/index.js",
+	"engines": {
+		"node": ">=18"
+	},
+	"license": "EUPL-1.2",
+	"bugs": {
+		"url": "https://github.com/danieleloscozzese/senate-scraper/issues"
+	},
+	"homepage": "https://github.com/danieleloscozzese/senate-scraper#readme",
+	"devDependencies": {
+		"@types/jsdom": "^21.1.0",
+		"prettier": "3.3.3"
+	},
+	"dependencies": {
+		"commander": "^12.1.0",
+		"jsdom": "^24"
+	}
 }
