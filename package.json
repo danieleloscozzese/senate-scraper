@@ -32,6 +32,6 @@
 	},
 	"dependencies": {
 		"commander": "^12.1.0",
-		"jsdom": "^24"
+		"jsdom": "^25"
 	}
 }
